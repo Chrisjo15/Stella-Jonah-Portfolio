@@ -8,10 +8,40 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Parisienne&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.stellajonah.com/career.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Career History | Stella Jonah">
+    <meta property="og:description" content="Career history of Stella Jonah, an experienced Virtual Assistant specializing in executive support, workflow coordination, documentation and remote operations.">
+    <meta property="og:url" content="https://www.stellajonah.com/career.html">
+    <meta property="og:image" content="https://www.stellajonah.com/favicon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Career History | Stella Jonah">
+    <meta name="twitter:description" content="Career history of Stella Jonah, an experienced Virtual Assistant specializing in executive support, workflow coordination, documentation and remote operations.">
+    <meta name="twitter:image" content="https://www.stellajonah.com/favicon-512.png">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body>
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-ring"></div>
+        <span class="loader-word">Stella Jonah</span>
+    </div>
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
     <!-- ========================= -->
     <!-- HEADER -->
     <!-- ========================= -->
@@ -44,8 +74,19 @@
             </ul>
         </nav>
 
-        <div class="contact-button">
-            <a href="contact.html">Contact Me</a>
+        <div class="header-actions">
+            <div class="contact-button">
+                <a href="contact.html">
+                    <i data-lucide="send"></i>
+                    Contact Me
+                </a>
+            </div>
+
+            <div class="header-divider"></div>
+
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
         </div>
 
         <div
@@ -285,14 +326,16 @@
                     <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
                     <a href="career.html">Career History</a>
+                    <a href="testimonials.html">Testimonials</a>
                     <a href="contact.html">Contact</a>
                 </div>
             </div>
 
             <div class="footer-contact">
                 <h4>Contact</h4>
-                <p>
-                    <a href="mailto:jonahstella007@gmail.com">
+                <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=jonahstella007@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
                         jonahstella007@gmail.com
                     </a>
                 </p>
@@ -306,10 +349,10 @@
             © 2026 Stella Jonah. All Rights Reserved.
         </p>
     </footer>
+    <button class="scroll-top-btn" id="scroll-top-btn" type="button" aria-label="Scroll to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

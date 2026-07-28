@@ -1,4 +1,70 @@
 /*=====================================================
+  0. ICONS
+=====================================================*/
+
+// This file is loaded with `defer` immediately after the deferred Lucide
+// CDN script, so Lucide is guaranteed to be available by the time this runs.
+
+if (window.lucide) {
+    window.lucide.createIcons();
+}
+
+
+/*=====================================================
+  PAGE LOADER
+=====================================================*/
+
+(function () {
+
+    const loader = document.querySelector(".page-loader");
+
+    if (!loader) return;
+
+    function hideLoader() {
+        loader.classList.add("loaded");
+    }
+
+    window.addEventListener("load", hideLoader);
+
+    // Fallback in case the load event is delayed by a slow asset
+    setTimeout(hideLoader, 2500);
+
+})();
+
+
+/*=====================================================
+  SCROLL TO TOP
+=====================================================*/
+
+(function () {
+
+    const scrollBtn = document.querySelector(".scroll-top-btn");
+
+    if (!scrollBtn) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 480) {
+            scrollBtn.classList.add("visible");
+        } else {
+            scrollBtn.classList.remove("visible");
+        }
+
+    });
+
+    scrollBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+})();
+
+
+/*=====================================================
   1. NAVIGATION
 =====================================================*/
 
@@ -37,6 +103,62 @@ navLinks.forEach(link => {
 
 
 /*=====================================================
+  1B. DARK MODE TOGGLE
+=====================================================*/
+
+(function () {
+
+    const root = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "dark") {
+        root.setAttribute("data-theme", "dark");
+    }
+
+    function updateIcon() {
+
+        if (!toggle) return;
+
+        const isDark = root.getAttribute("data-theme") === "dark";
+        const icon = toggle.querySelector("i");
+
+        if (icon) {
+            icon.setAttribute("data-lucide", isDark ? "sun" : "moon");
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        }
+    }
+
+    updateIcon();
+
+    if (toggle) {
+
+        toggle.addEventListener("click", () => {
+
+            const isDark = root.getAttribute("data-theme") === "dark";
+
+            if (isDark) {
+                root.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+            } else {
+                root.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            }
+
+            updateIcon();
+
+        });
+
+    }
+
+})();
+
+
+/*=====================================================
   2. HEADER
 =====================================================*/
 
@@ -61,6 +183,62 @@ if (header) {
     });
 
 }
+
+
+/*=====================================================
+  STAGGERED REVEAL INDEXING
+=====================================================*/
+
+// Assigns a --stagger index to each item in grouped card layouts so the
+// CSS transition-delay (see style.css, section 16) fires them in sequence
+// as the group scrolls into view.
+
+const staggerGroups = [
+    ".skills-grid .skillcard",
+    ".portfolio-grid .portfolio-preview-card",
+    ".testimonial-wrapper .testimonial-card",
+    ".timeline .timeline-row"
+];
+
+staggerGroups.forEach(selector => {
+
+    document.querySelectorAll(selector).forEach((el, index) => {
+
+        el.style.setProperty("--stagger", index);
+
+    });
+
+});
+
+
+/*=====================================================
+  BUTTON RIPPLE
+=====================================================*/
+
+const rippleTargets = document.querySelectorAll(
+    ".btn-primary, .btn-secondary, .cta-button, .contact-button a"
+);
+
+rippleTargets.forEach(btn => {
+
+    btn.addEventListener("click", function (e) {
+
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+
+        const ripple = document.createElement("span");
+        ripple.className = "ripple";
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+        ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+
+        this.appendChild(ripple);
+
+        ripple.addEventListener("animationend", () => ripple.remove());
+
+    });
+
+});
 
 
 /*=====================================================

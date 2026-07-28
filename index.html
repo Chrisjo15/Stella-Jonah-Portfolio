@@ -5,14 +5,43 @@
     <meta name="description" content="Professional portfolio of Stella Jonah, an experienced Virtual Assistant specializing in administrative support, project coordination, data management and remote operations.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stella Jonah | Virtual Assistant Portfolio</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.stellajonah.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Stella Jonah | Virtual Assistant Portfolio">
+    <meta property="og:description" content="Professional portfolio of Stella Jonah, an experienced Virtual Assistant specializing in administrative support, project coordination, data management and remote operations.">
+    <meta property="og:url" content="https://www.stellajonah.com/">
+    <meta property="og:image" content="https://www.stellajonah.com/favicon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stella Jonah | Virtual Assistant Portfolio">
+    <meta name="twitter:description" content="Professional portfolio of Stella Jonah, an experienced Virtual Assistant specializing in administrative support, project coordination, data management and remote operations.">
+    <meta name="twitter:image" content="https://www.stellajonah.com/favicon-512.png">
 </head>
 <body>
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-ring"></div>
+        <span class="loader-word">Stella Jonah</span>
+    </div>
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
     <header>
         <a href="index.html" class="logo-container">
             <svg class="logo-ring" viewBox="0 0 220 220">
@@ -42,8 +71,19 @@
             </ul>
         </nav>
 
-        <div class="contact-button">
-            <a href="contact.html">Contact Me</a>
+        <div class="header-actions">
+            <div class="contact-button">
+                <a href="contact.html">
+                    <i data-lucide="send"></i>
+                    Contact Me
+                </a>
+            </div>
+
+            <div class="header-divider"></div>
+
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
         </div>
 
         <div
@@ -55,48 +95,95 @@
     </header>
 
     <main>
-        <section class="hero reveal">
+        <section class="hero">
+            <div class="hero-dots tl" aria-hidden="true"></div>
+            <div class="hero-glow-a" aria-hidden="true"></div>
+            <div class="hero-glow-b" aria-hidden="true"></div>
+
             <div class="hero-text">
-                <h1>Welcome to Stella's Professional Portfolio</h1>
-                <p class="intro">
-                    Supporting businesses stay on track...
-                </p>
+                <span class="hero-badge"><span class="dot"></span>Virtual Assistant</span>
+
+                <h1>
+                    Professional Support.
+                    <span class="accent-italic">Seamless Operations.<span class="cursor-bar" aria-hidden="true"></span></span>
+                </h1>
+
+                <div class="accent-line"></div>
+
                 <p class="about">
-                    Welcome to my professional portfolio. Explore my experience, projects and work samples. I operate at the intersection of administrative precision and dynamic back-office support. Over the past 8 years my remote operations have focused on managing critical customer records, tracking campaign metrics and maintaining strict alignment with GDPR data protection protocols.
-                    I specialize in organizing complex database landscapes, developing cloud-based directory architectures and serving as the primary point of contact for external queries. My career background has trained me in meticulous detail analysis and observation, attributes that translate perfectly to database hygiene and information structures.
+                    Helping businesses stay organized, efficient and focused through reliable administrative support, data management and streamlined back-office operations.
                 </p>
-                <div class="button-area">
-                <a href="documents/Stella_Jonah_Resume.pdf" download>
-                    Download Resume
-                </a>
+
+                <div class="hero-buttons">
+                    <a href="documents/Stella_Jonah_Resume.pdf" download class="btn-primary">
+                        <i data-lucide="download"></i>
+                        Download Resume
+                    </a>
+                    <a href="portfolio.html" class="btn-secondary">
+                        <i data-lucide="play"></i>
+                        View My Work
+                    </a>
+                </div>
             </div>
-            </div>
+
             <div class="hero-image">
-                <img
-                    src="images/stella.png"
-                    alt="Portrait of Stella Jonah">
+                <div class="hero-sparkle" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+
+                <div class="hero-photo-wrap">
+                    <div class="hero-photo-glow"></div>
+                    <img
+                        src="images/stella.png"
+                        alt="Portrait of Stella Jonah">
+                </div>
+
+                <div class="hero-contact-card">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jonahstella007@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-contact-row">
+                        <span class="icon-circle"><i data-lucide="mail"></i></span>
+                        <span>jonahstella007@gmail.com</span>
+                        <i data-lucide="chevron-right" class="chev"></i>
+                    </a>
+                    <div class="hero-contact-divider"></div>
+                    <a href="tel:+2348158850169" class="hero-contact-row">
+                        <span class="icon-circle"><i data-lucide="phone"></i></span>
+                        <span>+234 815 885 0169</span>
+                        <i data-lucide="chevron-right" class="chev"></i>
+                    </a>
+                </div>
+
+                <div class="hero-dots br" aria-hidden="true"></div>
             </div>
         </section>
 
         <section class="stats reveal">
             <div class="stat-card">
+                <div class="stat-icon"><i data-lucide="briefcase"></i></div>
                 <h2 class="counter" data-target="8" data-symbol="+">0+</h2>
-                <p>Years Remote Experience</p>
+                <p class="stat-label">Years Remote Experience</p>
+                <p class="stat-sub">Administrative &amp; PM Support</p>
             </div>
 
             <div class="stat-card">
+                <div class="stat-icon"><i data-lucide="folder-open"></i></div>
                 <h2 class="counter" data-target="2000" data-symbol="+">0+</h2>
-                <p>Managed Client Records</p>
+                <p class="stat-label">Managed Client Records</p>
+                <p class="stat-sub">Data Integrity &amp; Reporting</p>
             </div>
 
             <div class="stat-card">
+                <div class="stat-icon"><i data-lucide="trending-up"></i></div>
                 <h2 class="counter" data-target="40" data-symbol="%">0%</h2>
-                <p>File Retrieval Improvement</p>
+                <p class="stat-label">File Retrieval Improvement</p>
+                <p class="stat-sub">Streamlined Directory Systems</p>
             </div>
 
             <div class="stat-card">
+                <div class="stat-icon"><i data-lucide="shield-check"></i></div>
                 <h2 class="counter" data-target="30" data-symbol="%">0%</h2>
-                <p>Error Reduction</p>
+                <p class="stat-label">Error Reduction</p>
+                <p class="stat-sub">Structured QA Protocols</p>
             </div>
         </section>
 
@@ -185,12 +272,17 @@
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="resume.html">Resume</a>
+                <a href="career.html">Career History</a>
                 <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
             </div>
             <div class="footer-contact">
                 <h4>Contact</h4>
-                <p><a href="mailto:jonahstella007@gmail.com">jonahstella007@gmail.com</a>
+                <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=jonahstella007@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        jonahstella007@gmail.com
+                    </a>
                 </p>
                 <p>Lagos, Nigeria</p>
             </div>
@@ -200,10 +292,10 @@
             © 2026 Stella Jonah. All Rights Reserved.
         </p>
     </footer>
+    <button class="scroll-top-btn" id="scroll-top-btn" type="button" aria-label="Scroll to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
