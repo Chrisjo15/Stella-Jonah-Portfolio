@@ -1696,6 +1696,10 @@ nav a.active::after{
     font-size: 12px;
 }
 
+.footer .copyright {
+    text-align: center;
+}
+
 /*======================================
 12. CAREER HISTORY
 ======================================*/
